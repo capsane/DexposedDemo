@@ -1,4 +1,4 @@
-package com.capsane.dexndk;
+package com.capsane.dexposeddemo;
 
 import org.junit.Test;
 

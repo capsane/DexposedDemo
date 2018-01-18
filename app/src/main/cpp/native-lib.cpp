@@ -7,12 +7,9 @@ extern "C"
 JNIEXPORT jstring
 
 JNICALL
-Java_com_capsane_dexndk_MainActivity_stringFromJNI(
+Java_com_capsane_dexposeddemo_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
-    std::string hello = "Hello from C++";
-
-//    start(1,2,3,4,5,6);
-
+    std::string hello = "Hello from C++ \nDexposed针对DVM，需要Android版本小于5.0";
     return env->NewStringUTF(hello.c_str());
 }

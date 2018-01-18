@@ -1,11 +1,10 @@
-package com.capsane.dexndk;
+package com.capsane.dexposeddemo;
 
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 import android.os.Looper;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.taobao.android.dexposed.DexposedBridge;
 import com.taobao.android.dexposed.XC_MethodReplacement;
@@ -148,6 +147,10 @@ public class AudioRecordManger {
      */
     private void setPath(String path) throws Exception {
         File file = new File(path);
+        File data = new File(MainActivity.DIR);
+        if (!data.exists()) {
+            data.mkdirs();
+        }
         if (file.exists()) {
             file.delete();
         }

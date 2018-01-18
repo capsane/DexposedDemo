@@ -1,7 +1,7 @@
-package com.capsane.dexndk;
+package com.capsane.dexposeddemo;
 
 
-import android.media.MediaSyncEvent;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
-//        System.loadLibrary("media");    // 直接加载库，需要声明调用的native方法
     }
 
     private AudioRecordManger mAudioRecordManger;
@@ -36,7 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String TAG = "MainActivity";
 
-    private static final String PATH = "/sdcard/data/DexNDK.pcm";
+    public static final String DIR = "/sdcard/data/";
+
+    public static final String PATH = DIR + "DexNDK.pcm";
 
 
 
@@ -68,7 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textView = findViewById(R.id.text_view);
         textView.setText(stringFromJNI());
-
+        textView.append("\n");
+        textView.append("录音文件： " + PATH + "\n");
 
     }
 
@@ -76,27 +78,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_start_record:
+                Log.e(TAG, "click start recording");
                 mAudioRecordManger.startRecord(PATH);
                 break;
 
             case R.id.button_stop_record:
+                Log.e(TAG, "click stop recording");
                 mAudioRecordManger.stopRecord();
                 break;
 
             case R.id.button_start_play:
+                Log.e(TAG, "click start playing");
                 mAudioTrackManager.startPlay();
                 break;
 
             case R.id.button_stop_play:
+                Log.e(TAG, "click stop playing");
                 mAudioTrackManager.stopPlay();
                 break;
 
             case R.id.button_hook:
-                Log.e(TAG, "onClick: hook...");
+                Log.e(TAG, "click hook...");
                 Toast.makeText(MainActivity.this, "hook...", Toast.LENGTH_SHORT).show();
-//                hookSystemLog(view);
+                hookSystemLog(view);
 //                mAudioRecordManger.hookAudioStartRecording();
-                mAudioRecordManger.hookAudioStartRecordingToJNI();
+//                mAudioRecordManger.hookAudioStartRecordingToJNI();
                 break;
 
             default:

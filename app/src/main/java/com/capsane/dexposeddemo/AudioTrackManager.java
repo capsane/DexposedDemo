@@ -1,4 +1,4 @@
-package com.capsane.dexndk;
+package com.capsane.dexposeddemo;
 
 import android.media.AudioFormat;
 import android.media.AudioManager;
@@ -20,8 +20,6 @@ public class AudioTrackManager {
     private static final String TAG = "AudioTrackManager";
 
     private AudioTrack mAudioTrack;
-
-    private String path = "/sdcard/data/DexNDK.pcm";
 
     private int bufferSize;
 
@@ -79,7 +77,7 @@ public class AudioTrackManager {
 
     class PlayThread extends Thread {
         byte[] data1=new byte[bufferSize*2];
-        File file=new File(path);
+        File file=new File(MainActivity.PATH);
         int off1=0;
         FileInputStream fileInputStream;
 

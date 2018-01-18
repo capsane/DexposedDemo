@@ -1,4 +1,4 @@
-package com.capsane.dexndk;
+package com.capsane.dexposeddemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

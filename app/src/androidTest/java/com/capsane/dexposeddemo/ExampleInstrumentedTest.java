@@ -1,4 +1,4 @@
-package com.capsane.dexndk;
+package com.capsane.dexposeddemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
