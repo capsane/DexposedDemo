@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/button_start_record_native"
+        android:text="Native录音"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_stop_record_native"
+        android:text="Native停止录音"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_start_play_native"
+        android:text="Play"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_stop_play_native"
+        android:text="停止播放"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_hook_native"
+        android:text="native hook"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <TextView
+            android:id="@+id/text_view_native"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="native"/>
+
+    </ScrollView>
+
+</android.widget.LinearLayout>
