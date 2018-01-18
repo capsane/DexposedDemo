@@ -6,3 +6,5 @@ Demo1:hookAudioStartRecording(). Bypass the hook put in Audio framework using De
 Demo2:hookSystemLog(). Hook the System.Log.e() method inside the app. 
 
 To test how to use Dexposed, you can try Demo2-hookSystemLog(), since you haven't got the Android system which has the hook.
+
+BTW, this is still a demo of AudioRecord and AudioTrack.
